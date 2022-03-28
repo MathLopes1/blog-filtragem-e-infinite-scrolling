@@ -1,5 +1,6 @@
 const postsContainer = document.querySelector('#posts-container')
 const loaderContainer = document.querySelector('.loader')
+const filterInput = document.querySelector('#filter')
 
 let page = 1
 
@@ -41,10 +42,28 @@ const showLoader = () => {
   removeLoeader()
 }
 
-window.addEventListener('scroll', () =>{
+window.addEventListener('scroll', () => {
    const { clientHeight, scrollHeight, scrollTop } = document.documentElement
    const isPageBottomAlmostReached = scrollTop + clientHeight >= scrollHeight - 10
    if(isPageBottomAlmostReached) {
     showLoader()
    }
+})
+
+filterInput.addEventListener('input', event => {
+    const inputValue = event.target.value.toLowerCase()
+    const posts = document.querySelectorAll('.post')
+    console.log(posts)
+
+    posts.forEach((post) => {
+        const posTitle = post.querySelector('.post-title').textContent.toLowerCase()
+        const postBody = post.querySelector('.post-body').textContent.toLowerCase()
+        
+        if(posTitle.includes(inputValue) || postBody.includes(inputValue)){
+           post.style.display = 'flex'
+           return
+        }
+        
+        post.style.display = 'none'
+    })
 })
