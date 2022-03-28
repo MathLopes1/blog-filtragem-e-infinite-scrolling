@@ -6,7 +6,7 @@
 
 ## 📘 Sobre
 
-Pagina Web consumindo informações de uma Api e exibindo os dados com scrolling infito e também, realizando filtragem.
+Pagina Web consumindo informações de uma API e exibindo os dados com scrolling infinito e também, realizando filtragem.
 
 ## 🔧 Tecnologias utilizadas
 
