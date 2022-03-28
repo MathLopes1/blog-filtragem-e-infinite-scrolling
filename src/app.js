@@ -25,8 +25,15 @@ const addPostsIntoDOM = async () => {
 
 addPostsIntoDOM()
 
+const removeLoeader = () => {
+    setTimeout(()=> {
+        loaderContainer.classList.remove('show')
+    }, 1000)
+}
+
 const showLoader = () => {
   loaderContainer.classList.add('show')
+  removeLoeader()
 }
 
 window.addEventListener('scroll', () =>{
